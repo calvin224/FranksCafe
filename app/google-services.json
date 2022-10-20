@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "27145746036",
+    "project_id": "franks-cafe-a299c",
+    "storage_bucket": "franks-cafe-a299c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27145746036:android:4930e4933aa5dca42fc321",
+        "android_client_info": {
+          "package_name": "ie.ul.frankscafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27145746036-nucvqldtrh1afrtmmh1qjsqulj5e9ah4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvJGvnXCgoIGvz79rozoidvS79ygKLvRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27145746036-nucvqldtrh1afrtmmh1qjsqulj5e9ah4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
