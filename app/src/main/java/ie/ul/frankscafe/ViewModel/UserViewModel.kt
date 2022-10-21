@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import ie.ul.frankscafe.Model.db.AppDatabase
 import ie.ul.frankscafe.Model.db_entity.User
+import ie.ul.frankscafe.Model.entity.UserEntity
 import ie.ul.frankscafe.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

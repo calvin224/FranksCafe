@@ -3,6 +3,7 @@ package ie.ul.frankscafe.repository
 import androidx.lifecycle.LiveData
 import ie.ul.frankscafe.Model.Dao.UserDao
 import ie.ul.frankscafe.Model.db_entity.User
+import ie.ul.frankscafe.Model.entity.UserEntity
 
 class UserRepository(private val userDao: UserDao) {
     val getAll: LiveData<List<User>> = userDao.getAll()

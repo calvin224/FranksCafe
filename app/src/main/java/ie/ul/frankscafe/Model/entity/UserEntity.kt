@@ -2,10 +2,10 @@ package ie.ul.frankscafe.Model.entity
 
 
 class UserEntity() {
-    var userId: Int? = null
-    var username: String? = null
-    var password: String? = null
-    var userType: Int? = null
+    private var userId: Int? = null
+    private var username: String? = null
+    private var password: String? = null
+    private var userType: Int? = null
 
 
     //BUILDER PATTERN
@@ -29,7 +29,6 @@ class UserEntity() {
             this.userId = userid
             return this
         }
-
 
         fun setUserType(usertype: Int?): Builder {
             this.userType = usertype

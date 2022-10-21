@@ -7,8 +7,8 @@ import java.util.jar.Attributes
 
 @Entity(tableName = "Users")
 data class User(
-    @PrimaryKey(autoGenerate = true) val userId: Int?,
-    @ColumnInfo(name = "username") val username: String?,
-    @ColumnInfo(name = "password") val password: String?,
-    @ColumnInfo(name = "userType") val usertype: Int?,
+    @PrimaryKey(autoGenerate = true) var userId: Int?,
+    @ColumnInfo(name = "username") var username: String?,
+    @ColumnInfo(name = "password") var password: String?,
+    @ColumnInfo(name = "userType") var usertype: Int?,
 )
