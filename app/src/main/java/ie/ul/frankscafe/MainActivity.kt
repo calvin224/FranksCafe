@@ -1,10 +1,18 @@
 package ie.ul.frankscafe
 
+import android.app.Application
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import androidx.lifecycle.Observer
+import ie.ul.frankscafe.Model.db.AppDatabase
 import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.Model.entity.UserEntity
 import ie.ul.frankscafe.ViewModel.UserViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,14 +21,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        UserEntity.Builder().setPassword("123")
-        UserEntity.Builder().setUserId(1)
-        UserEntity.Builder().setUsername("calvin")
-        UserEntity.Builder().setUserType(1)
-        var user = UserEntity.Builder().build()
-        var usertest = User(12,"calvin","123",1)
-        UserViewModel(application).addUser(usertest)
+        addUser()
+        ReadAll()
 
+ }
 
+    fun addUser(){
+        val user = User(99,"calvin23","123",1)
+        GlobalScope.launch(Dispatchers.IO) {
+            UserViewModel(application).addUser(user)
+        }
+
+        }
+
+    fun ReadAll(){
+        GlobalScope.launch(Dispatchers.IO) {
+            val textView : TextView = findViewById(R.id.textView) as TextView
+            textView.setText(UserViewModel(application).getAll.get(0).password)
+        }
     }
 }
+
+
