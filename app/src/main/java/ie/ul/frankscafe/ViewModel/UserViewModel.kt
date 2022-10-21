@@ -7,6 +7,7 @@ import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.Model.entity.UserEntity
 import ie.ul.frankscafe.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
@@ -25,6 +26,11 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO){
             repository.addUser(user)
         }
+    }
+
+    fun findbyusername(username: String): User {
+        var temp = repository.findbyusername(username)
+        return temp
     }
 
 
