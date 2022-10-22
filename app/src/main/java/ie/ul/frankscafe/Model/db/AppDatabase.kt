@@ -6,10 +6,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import ie.ul.frankscafe.Model.Dao.UserDao
 import ie.ul.frankscafe.Model.db_entity.User
+import ie.ul.frankscafe.Model.Dao.FoodDao
+import ie.ul.frankscafe.Model.db_entity.Food
 
-@Database(entities = [User :: class], version = 1)
+@Database(entities = [User :: class, Food :: class], version = 1)
 abstract class AppDatabase: RoomDatabase()  {
     abstract fun UserDao() : UserDao
+    abstract fun FoodDao() : FoodDao
 
     companion object {
 
@@ -26,7 +29,7 @@ abstract class AppDatabase: RoomDatabase()  {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "app_database"
-                ).build()
+                ).createFromAsset("database/Foods.db").build()
                 INSTANCE = instance
                 return instance
             }
