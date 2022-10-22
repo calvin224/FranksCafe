@@ -7,9 +7,9 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import ie.ul.frankscafe.Model.db.AppDatabase
-import ie.ul.frankscafe.Model.db_entity.User
-import ie.ul.frankscafe.Model.entity.UserEntity
-import ie.ul.frankscafe.ViewModel.UserViewModel
+import ie.ul.frankscafe.Model.db_entity.Food
+import ie.ul.frankscafe.Model.entity.FoodEntity
+import ie.ul.frankscafe.ViewModel.FoodViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -20,22 +20,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        addUser()
+
+/*        addFood()*/
         ReadAll()
+
  }
 
-    fun addUser(){
-        val user = User(99,"calvin23","123",1)
+/*    fun addFood(){
+        val food = Food(1,"Burger","BurgerType")
         GlobalScope.launch(Dispatchers.IO) {
-            UserViewModel(application).addUser(user)
-            }
+            FoodViewModel(application).addFood(food)
         }
+
+        }*/
 
     fun ReadAll(){
         GlobalScope.launch(Dispatchers.IO) {
             val textView : TextView = findViewById(R.id.textView) as TextView
-            textView.setText(UserViewModel(application).findbyusername("calvin23").password)
+            textView.setText((FoodViewModel(application).getAll.get(0).foodName) + " " + (FoodViewModel(application).getAll.get(1).foodName))
         }
     }
 }
+
 
