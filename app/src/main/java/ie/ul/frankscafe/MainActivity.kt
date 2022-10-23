@@ -20,21 +20,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-/*        addFood()*/
-        ReadAll()
+        ReadAllFood()
 
  }
 
-/*    fun addFood(){
-        val food = Food(1,"Burger","BurgerType")
-        GlobalScope.launch(Dispatchers.IO) {
-            FoodViewModel(application).addFood(food)
-        }
-
-        }*/
-
-    fun ReadAll(){
+    fun ReadAllFood(){
         GlobalScope.launch(Dispatchers.IO) {
             val textView : TextView = findViewById(R.id.textView) as TextView
             textView.setText((FoodViewModel(application).getAll.get(0).foodName) + " " + (FoodViewModel(application).getAll.get(1).foodName))
