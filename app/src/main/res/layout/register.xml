@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quaternary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Welcome to Frank's Cafe !"
+        android:textColor="@color/secondary"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/loginUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="20dp"
+        android:hint="username" />
+
+    <EditText
+        android:id="@+id/loginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="password"/>
+    <?xml version="1.0" encoding="utf-8"?>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/quaternary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="Welcome to Frank's Cafe !"
+            android:textColor="@color/secondary"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registerUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="20dp"
+            android:hint="username" />
+
+        <EditText
+            android:id="@+id/registerPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="password"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="370dp"
+            android:text="Admin ?"
+            android:textColor="@color/primary"
+            android:textSize="17dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/registerUserType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="150dp"
+            android:background="@color/tertiary"
+            android:hint="no"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registerRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/registerPassword"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/secondary"
+            android:text="register"
+            android:textColor="@color/quinary" />
+
+</RelativeLayout>

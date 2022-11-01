@@ -1,28 +1,44 @@
 package ie.ul.frankscafe
 
-import android.app.Application
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import androidx.lifecycle.Observer
-import ie.ul.frankscafe.Model.db.AppDatabase
-import ie.ul.frankscafe.Model.db_entity.Food
-import ie.ul.frankscafe.Model.entity.FoodEntity
+import androidx.fragment.app.Fragment
 import ie.ul.frankscafe.ViewModel.FoodViewModel
+import ie.ul.frankscafe.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ReadAllFood()
 
+        binding.fragment1btn.setOnClickListener {
+
+            replaceFragment(Signin())
+
+        }
+
+        binding.fragment2btn.setOnClickListener {
+
+            replaceFragment(Register())
+
+        }
  }
+    private fun replaceFragment(fragment : Fragment){
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.commit()
+    }
 
     fun ReadAllFood(){
         GlobalScope.launch(Dispatchers.IO) {
