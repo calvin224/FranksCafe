@@ -4,10 +4,8 @@ import android.app.Application
 import androidx.lifecycle.*
 import ie.ul.frankscafe.Model.db.AppDatabase
 import ie.ul.frankscafe.Model.db_entity.User
-import ie.ul.frankscafe.Model.entity.UserEntity
 import ie.ul.frankscafe.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
