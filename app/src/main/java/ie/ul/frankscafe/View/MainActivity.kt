@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ReadAllFood()
+
 
         binding.fragment1btn.setOnClickListener {
 
@@ -39,13 +39,6 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_container, fragment)
         fragmentTransaction.commit()
-    }
-
-    fun ReadAllFood(){
-        GlobalScope.launch(Dispatchers.IO) {
-            val textView : TextView = findViewById(R.id.textView) as TextView
-            textView.setText((FoodViewModel(application).getAll.get(0).foodName) + " " + (FoodViewModel(application).getAll.get(1).foodName))
-        }
     }
 }
 
