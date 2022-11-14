@@ -1,9 +1,10 @@
-package ie.ul.frankscafe
+package ie.ul.frankscafe.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import ie.ul.frankscafe.R
 import ie.ul.frankscafe.ViewModel.FoodViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
