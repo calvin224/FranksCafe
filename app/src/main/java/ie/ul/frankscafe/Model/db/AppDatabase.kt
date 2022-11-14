@@ -9,8 +9,9 @@ import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.Model.Dao.FoodDao
 import ie.ul.frankscafe.Model.Dao.PastOrdersDao
 import ie.ul.frankscafe.Model.db_entity.Food
+import ie.ul.frankscafe.Model.db_entity.PastOrder
 
-@Database(entities = [User :: class, Food :: class], version = 1)
+@Database(entities = [User :: class, Food :: class, PastOrder :: class], version = 1)
 abstract class AppDatabase: RoomDatabase()  {
     abstract fun UserDao() : UserDao
     abstract fun FoodDao() : FoodDao
