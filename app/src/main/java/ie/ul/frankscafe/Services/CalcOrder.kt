@@ -1,6 +1,6 @@
 package ie.ul.frankscafe.Services
 
-class CalcOrder {
+class CalcOrder(currOrder : CurrentOrder) {
 
 
 }
