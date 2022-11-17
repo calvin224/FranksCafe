@@ -19,4 +19,7 @@ interface UserDao {
     @Query("SELECT * FROM Users WHERE username LIKE :username")
      fun findbyUsername(username: String) : User
 
+    @Query("SELECT * FROM Users WHERE username LIKE :username AND  password LIKE :password")
+    fun findbyUsernameAndPassword(username: String,password :String) : User
+
 }

@@ -10,7 +10,7 @@ class UserRepository(private val userDao: UserDao) {
         userDao.addUser(user)
     }
 
-    fun findbyusername(username : String): User {
+    fun findbyusername(username: String): User {
         return userDao.findbyUsername(username)
     }
 }

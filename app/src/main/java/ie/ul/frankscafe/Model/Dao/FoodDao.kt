@@ -15,5 +15,4 @@ interface FoodDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addFood(food: Food)
-
 }
