@@ -2,9 +2,10 @@ package ie.ul.frankscafe.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.room.Index.Order
 import ie.ul.frankscafe.R
+import ie.ul.frankscafe.ViewModel.FoodViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -31,32 +32,8 @@ class MainActivity : AppCompatActivity() {
             replaceFragment(Register())
 
         }
-
-        binding.fragment3btn.setOnClickListener {
-
-           replaceFragment(Account())
-
-       }
-
-        binding.fragment4btn.setOnClickListener {
-
-           replaceFragment(Home())
-
-       }
-
-        binding.fragment5btn.setOnClickListener {
-
-            replaceFragment(Ordering())
-
-        }
-
-        binding.fragment6btn.setOnClickListener {
-
-            replaceFragment(PastOrders())
-
-        }
  }
-    private fun replaceFragment(fragment: Fragment){
+    private fun replaceFragment(fragment : Fragment){
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
