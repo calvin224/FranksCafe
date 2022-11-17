@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import ie.ul.frankscafe.Model.db.AppDatabase
-import ie.ul.frankscafe.Model.db_entity.Food
 import ie.ul.frankscafe.Model.db_entity.PastOrder
 import ie.ul.frankscafe.repository.PastOrdersRepository
 import kotlinx.coroutines.Dispatchers
