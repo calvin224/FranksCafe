@@ -44,12 +44,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.fragment4btn.setOnClickListener {
-
-            replaceFragment(Home())
-
-        }
-
         binding.fragment5btn.setOnClickListener {
 
             replaceFragment(Ordering())
