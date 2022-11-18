@@ -1,4 +1,7 @@
 package ie.ul.frankscafe.View
 
-class Ordering {
+import androidx.fragment.app.Fragment
+import ie.ul.frankscafe.R
+
+class Ordering : Fragment(R.layout.ordering) {
 }

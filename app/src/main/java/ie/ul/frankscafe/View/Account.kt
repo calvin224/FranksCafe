@@ -1,4 +1,7 @@
 package ie.ul.frankscafe.View
 
-class Account {
+import androidx.fragment.app.Fragment
+import ie.ul.frankscafe.R
+
+class Account : Fragment(R.layout.account) {
 }

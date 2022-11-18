@@ -1,4 +1,7 @@
 package ie.ul.frankscafe.View
 
-class PastOrders {
+import androidx.fragment.app.Fragment
+import ie.ul.frankscafe.R
+
+class PastOrders : Fragment(R.layout.pastorders) {
 }

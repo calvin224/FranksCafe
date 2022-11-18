@@ -37,6 +37,30 @@ class MainActivity : AppCompatActivity() {
             replaceFragment(Register())
 
         }
+
+        binding.fragment3btn.setOnClickListener {
+
+            replaceFragment(Account())
+
+        }
+
+        binding.fragment4btn.setOnClickListener {
+
+            replaceFragment(Home())
+
+        }
+
+        binding.fragment5btn.setOnClickListener {
+
+            replaceFragment(Ordering())
+
+        }
+
+        binding.fragment6btn.setOnClickListener {
+
+            replaceFragment(PastOrders())
+
+        }
  }
     private fun replaceFragment(fragment : Fragment){
 
