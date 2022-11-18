@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.*
 import ie.ul.frankscafe.Model.db.AppDatabase
 import ie.ul.frankscafe.Model.db_entity.User
+import ie.ul.frankscafe.Services.CurrentUser
 import ie.ul.frankscafe.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,4 +32,7 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         return temp
     }
 
+    fun login(username : String,application: Application){
+        CurrentUser.init(username,application)
+    }
 }
