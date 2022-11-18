@@ -17,6 +17,5 @@ object CurrentUser {
         user.setUsername(usertemp.username)
         user.build()
     }
-
 }
 
