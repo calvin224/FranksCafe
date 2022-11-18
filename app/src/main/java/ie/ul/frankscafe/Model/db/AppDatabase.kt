@@ -32,7 +32,7 @@ abstract class AppDatabase: RoomDatabase()  {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "app_database"
-                ).createFromAsset("database/Foods.db").build()
+                ).createFromAsset("database/Foods.db").allowMainThreadQueries().build()
                 INSTANCE = instance
                 return instance
             }

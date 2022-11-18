@@ -16,7 +16,7 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
 
     init {
         val userDao = AppDatabase.getDatabase(application).UserDao()
-        repository = UserRepository(userDao)
+        repository = UserRepository(application)
         getAll = repository.getAll
     }
 
@@ -35,7 +35,4 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
     fun login(username : String,application: Application){
         CurrentUser.init(username,application)
     }
-
-
-
 }
