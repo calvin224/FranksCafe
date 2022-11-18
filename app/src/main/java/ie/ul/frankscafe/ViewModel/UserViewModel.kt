@@ -15,7 +15,7 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
 
     init {
         val userDao = AppDatabase.getDatabase(application).UserDao()
-        repository = UserRepository(userDao)
+        repository = UserRepository(application)
         getAll = repository.getAll
     }
 
@@ -30,7 +30,5 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         var temp = repository.findbyusername(username)
         return temp
     }
-
-
 
 }

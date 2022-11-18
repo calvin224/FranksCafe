@@ -6,6 +6,7 @@ class UserEntity() {
     private var username: String? = null
     private var password: String? = null
     private var userType: Int? = null
+    private var isSubscribed: Int? = null
 
 
     //BUILDER PATTERN
@@ -14,6 +15,7 @@ class UserEntity() {
         private var username: String? = null
         private var password: String? = null
         private var userType: Int? = null
+        private var isSubscribed: Int? = null
 
         fun setUsername(username: String?): Builder {
             this.username = username
@@ -32,6 +34,11 @@ class UserEntity() {
 
         fun setUserType(usertype: Int?): Builder {
             this.userType = usertype
+            return this
+        }
+
+        fun setUserSubscribedStatus(isSubscribed: Int?): Builder {
+            this.isSubscribed = isSubscribed
             return this
         }
 
