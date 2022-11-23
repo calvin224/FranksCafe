@@ -16,7 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.fragment2btn.setOnClickListener {
 
-            replaceFragment(Register())
+            replaceFragment(Register(application))
 
         }
 
