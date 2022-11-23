@@ -12,7 +12,7 @@ object CurrentUser {
     fun init(username: String,application: Application) {
         var user: UserEntity.Builder = null!!;
         var userDao = AppDatabase.getDatabase(application).UserDao()
-        var usertemp = UserRepository(userDao).findbyusername(username)
+        var usertemp = UserRepository(application).findbyusername(username)
         user.setUserId(usertemp.userId)
         user.setUsername(usertemp.username)
         user.build()
