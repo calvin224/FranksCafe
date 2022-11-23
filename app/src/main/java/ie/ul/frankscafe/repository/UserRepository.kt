@@ -25,7 +25,7 @@ class UserRepository(application: Application) {
     fun notifyAllSubscribed(dailyDeal: String){
         var subscribedUsers = getAllSubscribed()
         for (user in subscribedUsers){
-            user.notifyUser(dailyDeal, application)
+            user.notifyUser(dailyDeal)
         }
     }
 }
