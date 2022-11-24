@@ -16,7 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
@@ -35,13 +35,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.fragment2btn.setOnClickListener {
 
-            replaceFragment(Register())
+            replaceFragment(Register(application))
 
         }
 
         binding.fragment3btn.setOnClickListener {
 
             replaceFragment(Account())
+            addUser2()
 
         }
 
@@ -75,6 +76,12 @@ class MainActivity : AppCompatActivity() {
 
     fun addUser() {
         val user = User(99, "calvin23", "frankscafenotification@gmail.com", "1", 1, 1)
+        GlobalScope.launch(Dispatchers.IO) {
+            UserViewModel(application).addUser(user)
+        }
+    }
+    fun addUser2() {
+        val user = User(992, "calvin232", "franom", "123", 1, 1)
         GlobalScope.launch(Dispatchers.IO) {
             UserViewModel(application).addUser(user)
         }
