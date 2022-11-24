@@ -5,14 +5,24 @@ import ie.ul.frankscafe.Model.db_entity.Food
 
 //Singleton
 object CurrentOrder {
-        fun addItem(food: Food) {
+    var Order: ArrayList<Food> = emptyList<Food>() as ArrayList<Food>
+    val originator = Originator(Food(0,"initial state",""))
+    val careTaker = Caretaker()
 
-        }
-        fun removeItem(food: Food, context: Context) {
 
-        }
+    fun addItem(food: Food) {
+        Order.add(food)
+        originator.state = food
+        careTaker.saveState(originator.createMemento())
+    }
+    fun removeItem(food: Food) {
+        Order.remove(food)
+    }
+    fun getOrders(): ArrayList<Food> {
+            return Order
+    }
 
-       fun getOrders() {
-
-       }
+    fun Undo(foodlist : ArrayList<Food>){
+        originator.restore(careTaker.restore(foodlist.size))
+    }
 }

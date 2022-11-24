@@ -17,4 +17,14 @@ class MealFactory (){
                 MealDealCRepository().addFood(food)
             }
     }
+
+    fun FoodFactoryEntity(food: Food) {
+        if(food.foodType == "MealDealA"){
+            MealDealARepository().addFood(food)
+        } else if(food.foodType == "MealDealB"){
+            MealDealBRepository().addFood(food)
+        } else {
+            MealDealCRepository().addFood(food)
+        }
+    }
 }

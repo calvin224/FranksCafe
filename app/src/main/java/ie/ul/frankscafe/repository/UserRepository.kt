@@ -8,6 +8,7 @@ import ie.ul.frankscafe.Model.db_entity.User
 class UserRepository(application: Application) {
     val userDao = AppDatabase.getDatabase(application).UserDao()
     val getAll: List<User> = userDao.getAll()
+    val application = application
 
     suspend fun addUser(user: User){
         userDao.addUser(user)

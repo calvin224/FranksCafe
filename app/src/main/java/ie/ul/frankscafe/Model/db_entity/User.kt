@@ -1,10 +1,6 @@
 package ie.ul.frankscafe.Model.db_entity
 
 import EmailService
-import android.content.ActivityNotFoundException
-import android.content.Intent
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -21,16 +17,17 @@ data class User(
     @ColumnInfo(name = "password") var password: String?,
     @ColumnInfo(name = "userType") var usertype: Int?,
     @ColumnInfo(name = "isSubscribed") var isSubscribed: Int?
-) {
-    fun notifyUser(dailyDeal: String) {
-        val auth = EmailService.UserPassAuthenticator("frankscafenotification@gmail.com", "mysrystwvdlxtvbm")
-        val to = listOf(InternetAddress(this.email))
-        val from = InternetAddress("frankscafenotification@gmail.com")
-        val email = EmailService.Email(auth, to, from, "Test Subject", dailyDeal)
-        val emailService = EmailService("smtp.gmail.com", 587)
+)
+{
+        fun notifyUser(dailyDeal: String) {
+            val auth = EmailService.UserPassAuthenticator("frankscafenotification@gmail.com", "mysrystwvdlxtvbm")
+            val to = listOf(InternetAddress(this.email))
+            val from = InternetAddress("frankscafenotification@gmail.com")
+            val email = EmailService.Email(auth, to, from, "Test Subject", dailyDeal)
+            val emailService = EmailService("smtp.gmail.com", 587)
 
-        GlobalScope.launch { // or however you do background threads
-            emailService.send(email)
+            GlobalScope.launch { // or however you do background threads
+                emailService.send(email)
+            }
         }
     }
-}

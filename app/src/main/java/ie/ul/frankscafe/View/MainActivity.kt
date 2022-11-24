@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.R
+import ie.ul.frankscafe.Services.CurrentOrder
 import ie.ul.frankscafe.ViewModel.FoodViewModel
 import ie.ul.frankscafe.ViewModel.UserViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
@@ -55,6 +56,9 @@ open class MainActivity : AppCompatActivity() {
             replaceFragment(PastOrders())
 
         }
+
+
+
  }
     private fun replaceFragment(fragment : Fragment){
 
