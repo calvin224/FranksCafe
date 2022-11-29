@@ -2,31 +2,38 @@ package ie.ul.frankscafe.Services
 
 import ie.ul.frankscafe.Model.entity.MealDealA
 import ie.ul.frankscafe.Model.entity.MealDealB
-import org.checkerframework.checker.units.qual.C
+import ie.ul.frankscafe.Model.entity.MealDealC
 
 class CalcOrder() {
-    var currCost = 0;
+    var currCost = 0
     var calcMealDeal = CalcMealDeal()
     val list = ArrayList<Visitable>()
-    val discounts = ArrayList<Int>()
-    fun calcOrder() {
+    var hashMap: HashMap<String, Int> = HashMap<String, Int>()
+    fun GetTotalCost(): Int {
+        hashMap.put("A", 0)
+        hashMap.put("B", 0)
+        hashMap.put("C", 0)
         for (food in CurrentOrder.getOrders()) {
-            //when done a meal deal create meal deal entity then add to list
-            //MealDealA = foodsitems
+            when (food.foodType) {
+                "A" -> hashMap.put("A", hashMap.getValue("A") + 1)
+                "B" -> hashMap.put("B", hashMap.getValue("B") + 1)
+                "C" -> hashMap.put("C", hashMap.getValue("C") + 1)
+            }
+            currCost += food.foodPrice
         }
-        for(item in list){
-            val temp = item.accept(calcMealDeal)
-           discounts.add(temp)
+        if (hashMap.getValue("A") == 3) {
+            list.add(MealDealA())
         }
+        if (hashMap.getValue("B") == 3) {
+            list.add(MealDealB())
+        }
+        if (hashMap.getValue("C") == 3) {
+            list.add(MealDealC())
+        }
+        currCost = (currCost * 0.14).toInt()
+        for (item in list) {
+            currCost = currCost / item.accept(calcMealDeal)
+        }
+        return currCost
     }
-
-    fun calcTaxes(){
-
-    }
-
-    fun calcDiscount(){
-
-
-    }
-
 }

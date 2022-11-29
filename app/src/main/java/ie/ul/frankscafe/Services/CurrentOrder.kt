@@ -6,7 +6,7 @@ import ie.ul.frankscafe.Model.db_entity.Food
 //Singleton
 object CurrentOrder {
     var Order: ArrayList<Food> = emptyList<Food>() as ArrayList<Food>
-    val originator = Originator(Food(0,"initial state",""))
+    val originator = Originator(Food(0,"initial state","","",1))
     val careTaker = Caretaker()
 
 
