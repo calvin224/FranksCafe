@@ -9,5 +9,8 @@ import java.util.jar.Attributes
 data class PastOrder(
     @PrimaryKey(autoGenerate = true) var orderID: Int,
     @ColumnInfo(name = "OrderStatus") var OrderStatus: String,
-    @ColumnInfo(name = "OrderCost") var OrderCost: String
+    @ColumnInfo(name = "PaidAmount") var OrderAmount: Double,
+    @ColumnInfo(name = "OrderCost") var OrderCost: Double,
+    @ColumnInfo(name = "OrderTime") var OrderTime: String,
+
 )

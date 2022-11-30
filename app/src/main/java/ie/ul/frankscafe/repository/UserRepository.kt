@@ -4,6 +4,7 @@ import android.app.Application
 import ie.ul.frankscafe.Model.Dao.UserDao
 import ie.ul.frankscafe.Model.db.AppDatabase
 import ie.ul.frankscafe.Model.db_entity.User
+import ie.ul.frankscafe.Services.CalcOrder
 
 class UserRepository(application: Application) {
     val userDao = AppDatabase.getDatabase(application).UserDao()
@@ -27,5 +28,9 @@ class UserRepository(application: Application) {
         for (user in subscribedUsers){
             user.notifyUser(dailyDeal)
         }
+    }
+
+    fun getTotalCost(): Int {
+        return  CalcOrder().GetTotalCost()
     }
 }

@@ -7,14 +7,14 @@ import ie.ul.frankscafe.Model.entity.MealDealC
 class CalcMealDeal : Visitor {
 
     override fun visit(entity: MealDealA): Int {
-            return MealDealA().returnCost()
+            return entity.returnCost()
     }
 
     override fun visit(entity: MealDealB): Int {
-        return MealDealA().returnCost()
+        return entity.returnCost()
     }
 
     override fun visit(entity: MealDealC): Int {
-        return MealDealA().returnCost()
+        return entity.returnCost()
     }
 }
