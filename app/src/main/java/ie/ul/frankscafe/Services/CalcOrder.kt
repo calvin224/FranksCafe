@@ -21,13 +21,13 @@ class CalcOrder() {
             }
             currCost += food.foodPrice
         }
-        if (hashMap.getValue("A") == 3) {
+        if (hashMap.getValue("A") >= 3) {
             list.add(MealDealA())
         }
-        if (hashMap.getValue("B") == 3) {
+        if (hashMap.getValue("B") >= 3) {
             list.add(MealDealB())
         }
-        if (hashMap.getValue("C") == 3) {
+        if (hashMap.getValue("C") >= 3) {
             list.add(MealDealC())
         }
         currCost = (currCost * 0.14).toInt()
