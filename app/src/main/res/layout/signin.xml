@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/quaternary">
+    android:background="@color/quaternary"
+    android:id="@+id/cont">
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,6 +66,7 @@
         android:layout_marginTop="515dp"
         android:layout_marginRight="120dp"
         android:background="@color/tertiary"
+        android:id="@+id/regButton"
         android:text="Register" />
 
 </RelativeLayout>

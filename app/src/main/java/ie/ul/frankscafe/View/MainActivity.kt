@@ -59,7 +59,6 @@ open class MainActivity : AppCompatActivity() {
         }
 
 
-
  }
     private fun replaceFragment(fragment : Fragment){
 
