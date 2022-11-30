@@ -30,7 +30,7 @@ class UserRepository(application: Application) {
         }
     }
 
-    fun getTotalCost(): Int {
+    fun getTotalCost(): Double {
         return  CalcOrder().GetTotalCost()
     }
 }

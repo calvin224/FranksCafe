@@ -16,6 +16,8 @@ object CurrentUser {
         var usertemp = UserRepository(application).findbyusername(username)
         user.setUserId(usertemp.userId)
         user.setUsername(usertemp.username)
+        user.setUserType(usertemp.usertype)
+        user.setUserSubscribedStatus(usertemp.isSubscribed)
         user.build()
     }
 
