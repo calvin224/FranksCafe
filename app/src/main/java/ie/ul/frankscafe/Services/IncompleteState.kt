@@ -19,8 +19,10 @@ abstract class IncompleteState(application: Application) : State(CurrentOrder) {
         return "Food Added"
     }
 
-    override fun onUndo(foodlist: ArrayList<Food>): String? {
-        currentOrder.Undo(foodlist)
+    override fun onUndo(foodlist: ArrayList<Food>?): String? {
+        if (foodlist != null) {
+            currentOrder.Undo(foodlist)
+        }
         return "Change Undone"
     }
 
@@ -28,4 +30,8 @@ abstract class IncompleteState(application: Application) : State(CurrentOrder) {
         currentOrder.removeItem(food)
         return "Food Removed"
     }
+    override fun getOrder(): ArrayList<Food>? {
+        return currentOrder.getOrders()
+    }
+
 }

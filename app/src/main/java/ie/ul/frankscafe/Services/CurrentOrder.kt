@@ -14,7 +14,7 @@ import java.time.LocalDateTime
 //Singleton
 object CurrentOrder {
     var Order: ArrayList<Food> = emptyList<Food>() as ArrayList<Food>
-    val originator = Originator(Food(0,"initial state","","",1))
+    val originator = Originator(Food(0,"initial state","","",1.0))
     val careTaker = Caretaker()
     private var state: State? = null
 

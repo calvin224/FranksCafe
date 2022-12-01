@@ -26,7 +26,7 @@ data class User(
             val email = EmailService.Email(auth, to, from, "Test Subject", dailyDeal)
             val emailService = EmailService("smtp.gmail.com", 587)
 
-            GlobalScope.launch { // or however you do background threads
+            GlobalScope.launch {
                 emailService.send(email)
             }
         }
