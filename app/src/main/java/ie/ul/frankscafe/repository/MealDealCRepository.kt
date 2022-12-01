@@ -1,11 +1,11 @@
 package ie.ul.frankscafe.repository
 
-import ie.ul.frankscafe.Model.db_entity.Food
+import ie.ul.frankscafe.Model.entity.FoodEntity
 
 class MealDealCRepository() {
-    val MealDealC = ArrayList<Food>()
+    val MealDealC = ArrayList<FoodEntity>()
 
-    fun addFood(food: Food){
+    fun addFood(food: FoodEntity){
         MealDealC.add(food)
     }
 }

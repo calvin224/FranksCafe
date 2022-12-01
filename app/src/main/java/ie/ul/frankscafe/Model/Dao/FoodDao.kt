@@ -15,4 +15,7 @@ interface FoodDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addFood(food: Food)
+
+    @Query("SELECT foodID||','||foodName||','||foodType||','||mealDeal||','||foodPrice FROM Foods")
+    fun readAll(): List<String>
 }
