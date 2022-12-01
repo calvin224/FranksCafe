@@ -29,7 +29,7 @@ open class MainActivity : AppCompatActivity() {
         binding.fragment1btn.setOnClickListener {
 
             replaceFragment(Signin())
-            notifyAllSubscribed()
+            //notifyAllSubscribed()
 
         }
 
@@ -57,7 +57,6 @@ open class MainActivity : AppCompatActivity() {
             replaceFragment(PastOrders())
 
         }
-
 
 
  }
