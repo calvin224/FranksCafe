@@ -32,7 +32,7 @@ class CalcOrder() {
         }
         currCost = (currCost * 0.14)
         for (item in list) {
-            currCost = currCost / item.accept(calcMealDeal)
+            currCost /= item.accept(calcMealDeal)
         }
         return currCost
     }

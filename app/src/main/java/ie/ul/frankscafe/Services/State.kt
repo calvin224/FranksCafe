@@ -1,5 +1,6 @@
 package ie.ul.frankscafe.Services
 
+import android.app.Application
 import ie.ul.frankscafe.Model.db_entity.Food
 
 abstract class State {
@@ -9,8 +10,9 @@ abstract class State {
         this.currentOrder = currentOrder
     }
 
-    abstract fun onComplete(): String?
+    abstract fun onComplete(application: Application): String?
     abstract fun onAdd(food: Food): String?
-    abstract fun onUndo(foodlist: ArrayList<Food>): String?
+    abstract fun onUndo(foodlist: ArrayList<Food>?): String?
     abstract fun onRemove(food: Food): String?
+    abstract fun getOrder(): ArrayList<Food>?
 }
