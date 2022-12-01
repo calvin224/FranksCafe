@@ -11,6 +11,7 @@ abstract class State {
 
     abstract fun onComplete(): String?
     abstract fun onAdd(food: Food): String?
-    abstract fun onUndo(foodlist: ArrayList<Food>): String?
+    abstract fun onUndo(foodlist: ArrayList<Food>?): String?
     abstract fun onRemove(food: Food): String?
+    abstract fun getOrder(): ArrayList<Food>?
 }

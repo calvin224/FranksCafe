@@ -25,11 +25,11 @@ class FoodViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-
     fun addFood(food: Food){
         viewModelScope.launch(Dispatchers.IO){
             foodrepository.addFood(food)
         }
     }
+
 
 }

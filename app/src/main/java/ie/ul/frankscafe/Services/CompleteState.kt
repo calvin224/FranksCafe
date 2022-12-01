@@ -12,12 +12,16 @@ class CompleteState() : State(CurrentOrder) {
         return "Order Completed, Action Locked"
     }
 
-    override fun onUndo(foodlist: ArrayList<Food>): String? {
+    override fun onUndo(foodlist: ArrayList<Food>?): String? {
         return "Order Completed, Action Locked"
     }
 
     override fun onRemove(food: Food): String? {
         return "Order Completed, Action Locked"
+    }
+
+    override fun getOrder(): ArrayList<Food>? {
+        return currentOrder.getOrders()
     }
 }
 
