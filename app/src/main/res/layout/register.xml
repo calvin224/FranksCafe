@@ -33,20 +33,35 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="250dp"
         android:layout_marginRight="20dp"
-        android:hint="username" />
+        android:hint="username"
+        android:minHeight="48dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="email"
+        android:minHeight="48dp"
+        />
 
     <EditText
-            android:id="@+id/registerPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="320dp"
-            android:layout_marginRight="20dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="password"/>
-
+        android:id="@+id/registerPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
 
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registerButton"
@@ -59,5 +74,7 @@
             android:background="@color/secondary"
             android:text="register"
             android:textColor="@color/quinary" />
+
+
 
 </RelativeLayout>
