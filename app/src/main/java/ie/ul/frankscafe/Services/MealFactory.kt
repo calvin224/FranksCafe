@@ -9,22 +9,13 @@ class MealFactory (){
 
     fun FoodFactory(food: Food) {
 
-            if(food.foodType == "MealDealA"){
+            if(food.foodType == "A"){
                 MealDealARepository().addFood(food)
-            } else if(food.foodType == "MealDealB"){
+            } else if(food.foodType == "B"){
                 MealDealBRepository().addFood(food)
             } else {
                 MealDealCRepository().addFood(food)
             }
     }
 
-    fun FoodFactoryEntity(food: Food) {
-        if(food.foodType == "MealDealA"){
-            MealDealARepository().addFood(food)
-        } else if(food.foodType == "MealDealB"){
-            MealDealBRepository().addFood(food)
-        } else {
-            MealDealCRepository().addFood(food)
-        }
-    }
 }

@@ -11,5 +11,5 @@ data class Food(
     @ColumnInfo(name = "foodName") var foodName: String,
     @ColumnInfo(name = "foodType") var foodType: String,
     @ColumnInfo(name = "mealDeal") var mealDeal: String,
-    @ColumnInfo(name = "foodPrice") var foodPrice: Int,
+    @ColumnInfo(name = "foodPrice") var foodPrice: Double,
 )

@@ -5,11 +5,11 @@ import ie.ul.frankscafe.Model.entity.MealDealB
 import ie.ul.frankscafe.Model.entity.MealDealC
 
 class CalcOrder() {
-    var currCost = 0
+    var currCost = 0.0
     var calcMealDeal = CalcMealDeal()
     val list = ArrayList<Visitable>()
     var hashMap: HashMap<String, Int> = HashMap<String, Int>()
-    fun GetTotalCost(): Int {
+    fun GetTotalCost(): Double {
         hashMap.put("A", 0)
         hashMap.put("B", 0)
         hashMap.put("C", 0)
@@ -30,7 +30,7 @@ class CalcOrder() {
         if (hashMap.getValue("C") >= 3) {
             list.add(MealDealC())
         }
-        currCost = (currCost * 0.14).toInt()
+        currCost = (currCost * 0.14)
         for (item in list) {
             currCost = currCost / item.accept(calcMealDeal)
         }
