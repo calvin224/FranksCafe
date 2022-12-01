@@ -45,7 +45,7 @@
 
 
     <Button
-        android:id="@+id/fragment5btn"
+        android:id="@+id/fragment4btn"
         android:layout_width="149dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
@@ -56,7 +56,7 @@
         android:text="Ordering" />
 
     <Button
-        android:id="@+id/fragment6btn"
+        android:id="@+id/fragment5btn"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
