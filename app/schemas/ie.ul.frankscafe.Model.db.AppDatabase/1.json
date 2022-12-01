@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "dbcc398178f7762e70863fafe7f61178",
+    "identityHash": "824f4b779a808599740eb387b29e2121",
     "entities": [
       {
         "tableName": "Users",
@@ -100,7 +100,7 @@
       },
       {
         "tableName": "PastOrders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`orderID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `OrderStatus` TEXT NOT NULL, `PaidAmount` REAL NOT NULL, `OrderCost` REAL NOT NULL, `OrderTime` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`orderID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `OrderStatus` TEXT NOT NULL, `OrderContents` TEXT NOT NULL, `PaidAmount` REAL NOT NULL, `OrderCost` REAL NOT NULL, `OrderTime` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "orderID",
@@ -111,6 +111,12 @@
           {
             "fieldPath": "OrderStatus",
             "columnName": "OrderStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "OrderContents",
+            "columnName": "OrderContents",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -146,7 +152,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dbcc398178f7762e70863fafe7f61178')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '824f4b779a808599740eb387b29e2121')"
     ]
   }
 }
