@@ -1,11 +1,16 @@
 package ie.ul.frankscafe.Services
 
+import android.app.Application
+import android.os.Build
+import androidx.annotation.RequiresApi
 import ie.ul.frankscafe.Model.db_entity.Food
 
-abstract class IncompleteState() : State(CurrentOrder) {
+abstract class IncompleteState(application: Application) : State(CurrentOrder) {
 
-    override fun onComplete(): String? {
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onComplete(application: Application): String? {
         currentOrder.changeState(CompleteState())
+        currentOrder.processOrder(application)
         return "Order Processed"
     }
 
