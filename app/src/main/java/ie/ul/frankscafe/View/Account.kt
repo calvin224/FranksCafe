@@ -48,11 +48,11 @@ class Account : Fragment(R.layout.account){
             }
         }*/
 
-        notificationButton.setOnClickListener {
+        /*notificationButton.setOnClickListener {
             (activity as MainActivity).showNotification()
-        }
+        }*/
 
-        @SuppressLint("ServiceCast")
+        /*@SuppressLint("ServiceCast")
         fun showNotification(){
             val channelID = "100"
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -72,7 +72,7 @@ class Account : Fragment(R.layout.account){
             val notification = builder.build()
 
             notificationManager.notify(1000, notification)
-        }
+        }*/
 
         return view
     }
