@@ -11,9 +11,8 @@ import androidx.fragment.app.FragmentActivity
 import ie.ul.frankscafe.R
 import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.Services.CurrentUser
-import ie.ul.frankscafe.ViewModel.UserViewModel
-import ie.ul.frankscafe.databinding.ActivityMainBinding
 import ie.ul.frankscafe.ViewModel.OrderViewModel
+import ie.ul.frankscafe.ViewModel.UserViewModel
 import kotlinx.android.synthetic.main.register.*
 import kotlinx.android.synthetic.main.signin.*
 import kotlinx.coroutines.Dispatchers
