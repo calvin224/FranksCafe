@@ -11,12 +11,18 @@ class OrderViewModel(application: Application): AndroidViewModel(application)
         return CurrentOrder.getState()?.getOrder()
     }
     fun addItem(food: Food){
-            CurrentOrder.getState()?.onAdd(food)
+        CurrentOrder.getState()?.onAdd(food)
     }
     fun Undo(){
-            CurrentOrder.getState()?.onUndo(getOrder())
+        CurrentOrder.getState()?.onUndo(getOrder())
     }
     fun removeItem(food: Food){
         CurrentOrder.getState()?.onRemove(food)
+    }
+    fun getState() {
+        CurrentOrder.getState()
+    }
+    fun processOrder(application: Application){
+        CurrentOrder.getState()?.onComplete(application)
     }
 }

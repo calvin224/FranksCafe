@@ -24,6 +24,11 @@ class PastOrderViewModel(application: Application): AndroidViewModel(application
         viewModelScope.launch(Dispatchers.IO){
             repository.addOrder(order)
         }
+    }
 
+    fun GetPastOrder(id : Int){
+        viewModelScope.launch(Dispatchers.IO){
+            return@launch repository.GetOrder(id)
+        }
     }
 }

@@ -1,7 +1,6 @@
 package ie.ul.frankscafe.repository
 
 import android.app.Application
-import ie.ul.frankscafe.Model.Dao.UserDao
 import ie.ul.frankscafe.Model.db.AppDatabase
 import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.Services.CalcOrder
@@ -15,7 +14,7 @@ class UserRepository(application: Application) {
         userDao.addUser(user)
     }
 
-    fun findbyusername(username: String): User {
+    fun findbyusername(username: String?): User {
         return userDao.findbyUsername(username)
     }
 

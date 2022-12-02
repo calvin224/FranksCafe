@@ -24,5 +24,8 @@ class CompleteState() : State(CurrentOrder) {
     override fun getOrder(): ArrayList<Food>? {
         return currentOrder.getOrders()
     }
+    override fun clear(){
+        currentOrder.clear()
+    }
 }
 

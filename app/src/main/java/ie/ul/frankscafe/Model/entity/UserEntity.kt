@@ -9,7 +9,6 @@ class UserEntity() {
     private var isSubscribed: Int? = null
 
 
-    //BUILDER PATTERN
     class Builder {
         private var userId: Int? = null
         private var username: String? = null
@@ -50,7 +49,12 @@ class UserEntity() {
             userentity.userType = userType
             return userentity
         }
+
+        fun getUserId(): Int? {
+            return userId
+        }
     }
+
 }
 
 
