@@ -13,30 +13,33 @@ import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.Services.CurrentUser
 import ie.ul.frankscafe.ViewModel.UserViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
+import ie.ul.frankscafe.ViewModel.OrderViewModel
+import ie.ul.frankscafe.ViewModel.UserViewModel
+import kotlinx.android.synthetic.main.register.*
+import kotlinx.android.synthetic.main.signin.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlin.random.Random
 
 class Signin(val application: Application)  : Fragment(R.layout.signin){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.signin, container, false)
         // set on-click listener
-        val regButton = view.findViewById<AppCompatButton>(R.id.regButton)
-        regButton.setOnClickListener{
-                val fm = (activity as FragmentActivity).supportFragmentManager
-                val fragmentTransaction = fm.beginTransaction()
-                fragmentTransaction.replace(R.id.fragment_container, Fragment(R.layout.register))
-                fragmentTransaction.commit()
-            val user = User(9922, "calvin2322", "franom22", "123", 1, 1)
-            login(user)
+        val Loginbtn = view.findViewById<AppCompatButton>(R.id.Loginbtn)
+        Loginbtn.setOnClickListener{
+
+            if (UserViewModel(application).checkValidUser(loginUsername.text.toString(),loginPassword.text.toString()) == true) {
+                UserViewModel(application).login(loginUsername.text.toString(),application)
+                //println("User Present")
+            }
+            else if (UserViewModel(application).checkValidUser(loginUsername.text.toString(),loginPassword.text.toString()) == false){
+//                println("User not present")
+            }
         }
 
 
         return view
     }
-
-    fun login(user: User){
-        UserViewModel(application).login(user.username,application)
-        val user2 = User(CurrentUser.user.getUserId(), "calvin2322", "franom22", "123", 1, 1)
-        UserViewModel(application).addUser(user2)
-    }
-
 }
