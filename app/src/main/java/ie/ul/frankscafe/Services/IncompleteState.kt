@@ -34,4 +34,8 @@ abstract class IncompleteState(application: Application) : State(CurrentOrder) {
         return currentOrder.getOrders()
     }
 
+    override fun clear(){
+        currentOrder.clear()
+    }
+
 }

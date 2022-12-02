@@ -15,4 +15,5 @@ abstract class State {
     abstract fun onUndo(foodlist: ArrayList<Food>?): String?
     abstract fun onRemove(food: Food): String?
     abstract fun getOrder(): ArrayList<Food>?
+    abstract fun clear()
 }

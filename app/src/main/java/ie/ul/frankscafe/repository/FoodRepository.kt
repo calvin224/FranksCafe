@@ -7,11 +7,6 @@ import ie.ul.frankscafe.Model.entity.FoodTypeEntity
 import ie.ul.frankscafe.Services.FoodFactory
 
 
-
-
-
-
-
 class FoodRepository(private val foodDao: FoodDao) {
 
     private var allFoods: MutableList<FoodEntity> = ArrayList()

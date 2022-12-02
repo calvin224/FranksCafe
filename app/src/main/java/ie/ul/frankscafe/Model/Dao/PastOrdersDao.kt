@@ -14,4 +14,7 @@ interface PastOrdersDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addOrder(order: PastOrder)
+
+    @Query("SELECT * from PastOrders WHERE orderID like :id")
+    fun getOrder(id : Int): List<PastOrder>
 }

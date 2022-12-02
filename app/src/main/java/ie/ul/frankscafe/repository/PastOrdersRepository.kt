@@ -9,6 +9,8 @@ class PastOrdersRepository(private val pastOrdersDao: PastOrdersDao) {
     suspend fun addOrder(pastOrder: PastOrder){
         pastOrdersDao.addOrder(pastOrder)
     }
-
+    suspend fun GetOrder(id : Int){
+        pastOrdersDao.getOrder(id)
+    }
 
 }
