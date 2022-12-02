@@ -10,14 +10,20 @@ object CurrentUser {
     lateinit var currentUser: User
     fun init(username: String?, application: Application) {
         var usertemp = UserRepository(application).findbyusername(username)
+        UserEntity.Builder().setUserId(usertemp.userId)
+        UserEntity.Builder().setEmail(usertemp.email)
+        UserEntity.Builder().setUsername(usertemp.username)
+        UserEntity.Builder().setUserType(usertemp.usertype)
+        UserEntity.Builder().setUserSubscribedStatus(usertemp.isSubscribed)
+        UserEntity.Builder().build()
         currentUser = User(usertemp.userId, usertemp.username, usertemp.email, usertemp.password, usertemp.usertype, usertemp.isSubscribed)
     }
 
     fun getuser(): User {
         return currentUser
     }
-//    fun clear(){
-////         user = null!!
-//    }
+    fun clear(){
+        currentUser = User(-1, "", "", "", 0, 0)
+   }
 }
 

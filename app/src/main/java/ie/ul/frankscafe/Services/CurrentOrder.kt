@@ -33,6 +33,7 @@ object CurrentOrder {
     fun removeItem(inFood: FoodEntity) {
         val condition: Predicate<FoodEntity> = Predicate<FoodEntity> { food -> food.getFoodName().toString() == inFood.getFoodName().toString() }
         Order.stream().filter(condition).findFirst().ifPresent(Order::remove)
+        careTaker.saveState(originator.createMemento())
     }
     fun getOrders(): ArrayList<FoodEntity> {
             return Order

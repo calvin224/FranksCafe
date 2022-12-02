@@ -30,7 +30,7 @@ class CalcOrder() {
         if (hashMap.getValue("C") >= 3) {
             list.add(MealDealC())
         }
-        currCost = (currCost * 0.14)
+        currCost = (currCost * 1.14)
         for (item in list) {
             currCost /= item.accept(calcMealDeal)
         }
