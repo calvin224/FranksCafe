@@ -18,6 +18,14 @@ class UserRepository(application: Application) {
         return userDao.findbyUsername(username)
     }
 
+    fun checkValidUser(username: String, password: String): Boolean{
+        return userDao.findbyUsernameAndPassword(username,password) != null
+    }
+
+    fun login(username: String,password: String): User {
+        return userDao.findbyUsernameAndPassword(username,password)
+    }
+
     fun getAllSubscribed(): List<User> {
         return userDao.getAllSubscribed()
     }

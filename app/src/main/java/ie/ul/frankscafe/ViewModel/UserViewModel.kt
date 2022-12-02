@@ -27,8 +27,18 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    fun checkValidUser(username: String, password: String): Boolean{
+        return repository.checkValidUser(username, password)
+    }
+
+
     fun findbyusername(username: String): User {
         var temp = repository.findbyusername(username)
+        return temp
+    }
+
+    fun login(username: String, password: String): User {
+        var temp = repository.login(username, password)
         return temp
     }
 

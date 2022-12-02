@@ -24,57 +24,56 @@
             android:textSize="30dp"
             android:textStyle="bold" />
 
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/registerUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginBottom="75dp"
+        android:layout_alignBottom="@id/registerEmail"
+        android:textAlignment="center"
         android:layout_marginRight="20dp"
-        android:hint="username"
+        android:hint="Username"
         android:minHeight="48dp" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/registerEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/registerPassword"
+        android:layout_marginBottom="75dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="180dp"
         android:layout_marginRight="20dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="email"
-        android:minHeight="48dp"
-        />
+        android:textAlignment="center"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"/>
 
     <EditText
-        android:id="@+id/registerPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:hint="password"
-        android:inputType="textPassword"
-        android:minHeight="48dp" />
+            android:id="@+id/registerPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignBottom="@id/registerButton"
+            android:layout_marginBottom="100dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:textAlignment="center"
+            android:inputType="textPassword"
+            android:hint="Password"/>
 
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/registerPassword"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="200dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
             android:layout_marginRight="20dp"
             android:background="@color/secondary"
+            android:textAlignment="center"
             android:text="register"
             android:textColor="@color/quinary" />
-
-
-
 </RelativeLayout>
