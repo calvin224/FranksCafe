@@ -28,7 +28,7 @@ open class MainActivity : AppCompatActivity() {
 
         binding.fragment1btn.setOnClickListener {
 
-            replaceFragment(Signin())
+            replaceFragment(Signin(application))
             //notifyAllSubscribed()
 
         }
@@ -74,9 +74,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     fun addUser() {
-        val user = User(99, "calvin23", "frankscafenotification@gmail.com", "1", 1, 1)
         GlobalScope.launch(Dispatchers.IO) {
-            UserViewModel(application).addUser(user)
         }
     }
     fun addUser2() {

@@ -7,6 +7,7 @@ import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.Services.CurrentUser
 import ie.ul.frankscafe.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
@@ -20,7 +21,6 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         getAll = repository.getAll
     }
 
-
     fun addUser(user: User){
         viewModelScope.launch(Dispatchers.IO){
             repository.addUser(user)
@@ -32,7 +32,13 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         return temp
     }
 
-    fun login(username : String,application: Application){
+    fun login(username: String?, application: Application){
         CurrentUser.init(username,application)
+    }
+
+    fun register(user: User){
+        GlobalScope.launch(Dispatchers.IO) {
+            repository.addUser(user)
+        }
     }
 }

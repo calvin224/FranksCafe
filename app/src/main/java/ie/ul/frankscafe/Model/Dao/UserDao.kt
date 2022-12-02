@@ -1,7 +1,5 @@
 package ie.ul.frankscafe.Model.Dao
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -17,7 +15,7 @@ interface UserDao {
     suspend fun addUser(user: User)
 
     @Query("SELECT * FROM Users WHERE username LIKE :username")
-     fun findbyUsername(username: String) : User
+     fun findbyUsername(username: String?) : User
 
     @Query("SELECT * from Users WHERE isSubscribed = 1")
     fun getAllSubscribed(): List<User>
