@@ -1,6 +1,7 @@
 package ie.ul.frankscafe.View
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -17,6 +18,7 @@ import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import ie.ul.frankscafe.R
+import ie.ul.frankscafe.Services.CurrentUser
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.account.*
 
@@ -24,30 +26,29 @@ class AdminAccount(val application: Application, val mainFragmentManager: MainFr
 
     lateinit var binding: ActivityMainBinding
 
-    val textView: TextView = findViewById(R.id.usernametxt) as TextView
-    textView.text = getString(CurrentUser.getuser().username)
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater!!.inflate(R.layout.account, container, false)
-        val toggle = view.findViewById<Switch>(R.id.notiswitch)
-        //val user = CurrentUser.getuser()
+
+        val textView: TextView = view?.findViewById(R.id.usernametxt) as TextView
+        textView.setText(CurrentUser.getuser().username)
+
+        val view: View = inflater!!.inflate(R.layout.adminaccount, container, false)
 
         // on switch change notification state
         notiswitch.setOnCheckedChangeListener { _, isChecked ->  //toggles notifications for current user
             // toggle.setOnCheckedChangeListener { _, isChecked ->  //toggles notifications for current user
             if (isChecked) {
-                user.setUserSubscribedStatus(1)
+                CurrentUser.getuser().isSubscribed = 1
             } else {
-                user.setUserSubscribedStatus(0)
+                CurrentUser.getuser().isSubscribed = 0
             }
         }
 
         //
-        val spinner: Spinner = view.findViewById(R.id.dealspinner)
+        val dealSpinner: Spinner = view.findViewById(R.id.dealspinner)
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             application,
@@ -57,10 +58,10 @@ class AdminAccount(val application: Application, val mainFragmentManager: MainFr
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner
-            spinner.adapter = adapter
+            dealSpinner.adapter = adapter
         }
 
-        class SpinnerActivity : Activity(), AdapterView.OnItemSelectedListener {
+        abstract class SpinnerActivity : Activity(), AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
                 parent: AdapterView<*>,
@@ -68,17 +69,10 @@ class AdminAccount(val application: Application, val mainFragmentManager: MainFr
                 pos: Int,
                 id: Long
             ) {
-                // An item was selected. You can retrieve the selected item using
-                // parent.getItemAtPosition(pos)
+                ie.ul.frankscafe.Services.NotificationManager(application).updateDeal(parent.getItemAtPosition(pos) as String)
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Another interface callback
-            }
         }
-
-        val spinner: Spinner = findViewById(R.id.dealspinner)
-        spinner.onItemSelectedListener = this
 
         return view
     }
