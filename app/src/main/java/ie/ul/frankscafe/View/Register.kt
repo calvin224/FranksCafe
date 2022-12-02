@@ -24,10 +24,7 @@ public class Register (val application: Application) : Fragment(R.layout.registe
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.register, container, false)
         val registerButton = view.findViewById<AppCompatButton>(R.id.registerButton)
-        val fm = (activity as FragmentActivity).supportFragmentManager
-        val fragmentTransaction = fm.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, Fragment(R.layout.signin))
-        fragmentTransaction.commit()
+
         // set on-click listener
         registerButton.setOnClickListener{
             val user = User( Random.nextInt(0, 9999999),registerUsername.text.toString(),registerEmail.text.toString(),registerPassword.text.toString(), 1, 1)

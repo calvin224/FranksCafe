@@ -6,23 +6,22 @@ import ie.ul.frankscafe.repository.UserRepository
 
 //Singleton
 object CurrentUser {
-    var user : UserEntity.Builder = null!!
 
     fun init(username: String?, application: Application) {
         var usertemp = UserRepository(application).findbyusername(username)
-        user.setUserId(usertemp.userId)
-        user.setUsername(usertemp.username)
-        user.setUserType(usertemp.usertype)
-        user.setUserSubscribedStatus(usertemp.isSubscribed)
-        user.build()
+        UserEntity.Builder().setUserId(usertemp.userId)
+        UserEntity.Builder().setUsername(usertemp.username)
+        UserEntity.Builder().setUserType(usertemp.usertype)
+        UserEntity.Builder().setUserSubscribedStatus(usertemp.isSubscribed)
+        UserEntity.Builder().build()
     }
 
     fun getuser(): UserEntity.Builder {
-        return user
+        return UserEntity.Builder()
     }
-    fun clear(){
-         user = null!!
-    }
+//    fun clear(){
+////         user = null!!
+//    }
 
 }
 
