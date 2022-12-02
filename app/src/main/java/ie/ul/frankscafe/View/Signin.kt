@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.FragmentContainer
 import androidx.fragment.app.FragmentManager
 import ie.ul.frankscafe.R
-import kotlinx.android.synthetic.main.signin.*
 import com.google.android.material.R.id.container
 import ie.ul.frankscafe.ViewModel.UserViewModel
 

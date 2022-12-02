@@ -38,6 +38,10 @@ object CurrentOrder {
     fun getState(): State? {
         return state
     }
+
+    fun clear(){
+        Order = null!!
+    }
     @RequiresApi(Build.VERSION_CODES.O)
     fun processOrder(application: Application) {
         val ordersDao = AppDatabase.getDatabase(application).PastOrdersDao()

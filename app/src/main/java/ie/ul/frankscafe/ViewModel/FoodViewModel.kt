@@ -32,5 +32,4 @@ class FoodViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-
 }

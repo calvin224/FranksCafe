@@ -12,4 +12,3 @@ interface Visitor {
 
     fun visit(entity: MealDealC): Int
 }
-

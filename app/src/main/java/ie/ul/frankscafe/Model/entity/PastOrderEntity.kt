@@ -6,7 +6,6 @@ class PastOrderEntity{
     private var orderCost: String? = null
 
 
-    //BUILDER PATTERN
     class Builder {
         private var orderID: Int? = null
         private var OrderStatus: String? = null

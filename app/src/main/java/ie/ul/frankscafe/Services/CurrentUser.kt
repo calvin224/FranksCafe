@@ -12,7 +12,6 @@ object CurrentUser {
     var user : UserEntity.Builder = null!!
 
     fun init(username: String,application: Application) {
-        var userDao = AppDatabase.getDatabase(application).UserDao()
         var usertemp = UserRepository(application).findbyusername(username)
         user.setUserId(usertemp.userId)
         user.setUsername(usertemp.username)
@@ -24,5 +23,9 @@ object CurrentUser {
     fun getuser(): UserEntity.Builder {
         return user
     }
+    fun clear(){
+         user = null!!
+    }
+
 }
 
