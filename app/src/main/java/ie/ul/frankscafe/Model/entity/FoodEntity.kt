@@ -4,7 +4,7 @@ package ie.ul.frankscafe.Model.entity
 class FoodEntity() {
     private var foodID: Int? = null
     private var foodName: String? = null
-    private var foodPrice: Int? = null
+    private var foodPrice: Double? = null
     var foodType: FoodTypeEntity? = null
 
 
@@ -12,7 +12,7 @@ class FoodEntity() {
     class Builder {
         private var foodID: Int? = null
         private var foodName: String? = null
-        private var foodPrice: Int? = null
+        private var foodPrice: Double? = null
         var foodType: FoodTypeEntity? = null
 
         fun setFoodId(foodID: Int?): Builder {
@@ -25,7 +25,7 @@ class FoodEntity() {
             return this
         }
 
-        fun setFoodPrice(foodPrice: Int?): Builder {
+        fun setFoodPrice(foodPrice: Double?): Builder {
             this.foodPrice = foodPrice
             return this
         }
@@ -53,7 +53,7 @@ class FoodEntity() {
         return foodName
     }
 
-    fun getFoodPrice(): Int? {
+    fun getFoodPrice(): Double? {
         return foodPrice
     }
 

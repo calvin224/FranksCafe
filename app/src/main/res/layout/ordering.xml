@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/quaternary">
 
 
@@ -9,163 +14,101 @@
         android:id="@+id/header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="Welcome to Frank's Cafe !"
-        android:layout_alignParentTop="true"
         android:textColor="@color/secondary"
         android:textSize="30dp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ItalianTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
         android:layout_below="@+id/header_title"
-        android:text="Starters:"
-        android:textColor="@color/secondary"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/Starters"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginLeft="0dp"
-        android:layout_below="@+id/textView2"
-        android:hint="Starter# StarterPrice#"
-        android:textColor="@color/secondary"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/StartersQuant"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/Starters"
-        android:layout_marginTop="-10dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="0"
-        android:textAlignment="center"
-        android:inputType="numberSigned" />
-
-
-    <TextView
-        android:id="@+id/Mainstag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:layout_below="@+id/Starters"
-        android:text="Mains:"
+        android:text="Italian:"
         android:textColor="@color/secondary"
         android:textSize="30dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/Mains"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+    <ListView
+        android:id="@+id/Italian"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/ItalianTag"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginLeft="0dp"
-        android:layout_below="@+id/Mainstag"
-        android:hint="Main# MainPrice#"
-        android:textColor="@color/secondary"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/MainsQuant"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/Mains"
-        android:layout_marginTop="-10dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="0"
-        android:textAlignment="center"
-        android:inputType="numberSigned" />
+        android:layout_marginTop="2dp"
+        android:nestedScrollingEnabled="true" />
 
     <TextView
-        android:id="@+id/DesTag"
+        android:id="@+id/MexicanTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/Italian"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:layout_below="@+id/Mains"
-        android:text="Desserts:"
+        android:text="Mexican:"
         android:textColor="@color/secondary"
         android:textSize="30dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/Desserts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ListView
+        android:id="@+id/Mexican"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/MexicanTag"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginLeft="0dp"
-        android:layout_below="@+id/DesTag"
-        android:hint="Dessert# DesPrice#"
-        android:textColor="@color/secondary"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/DesQuant"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/Desserts"
-        android:layout_marginTop="-10dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="0"
-        android:textAlignment="center"
-        android:inputType="numberSigned" />
+        android:nestedScrollingEnabled="true" />
 
     <TextView
-        android:id="@+id/Total"
+        android:id="@+id/ChineseTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/Mexican"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:layout_below="@+id/Desserts"
-        android:text="Total:"
+        android:text="Chinese:"
         android:textColor="@color/secondary"
         android:textSize="30dp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/Totalquant"
-        android:layout_width="40dp"
+    <ListView
+        android:id="@+id/Chinese"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/ChineseTag"
+        android:layout_centerHorizontal="true"
+        android:nestedScrollingEnabled="true" />
+
+    <TextView
+        android:id="@+id/YourOrderTag"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/Total"
-        android:layout_marginTop="-10dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="0"
-        android:textAlignment="center"
-        android:inputType="number" />
+        android:layout_below="@+id/Chinese"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Your Order:"
+        android:textColor="@color/secondary"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/YourOrder"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/YourOrderTag"
+        android:layout_centerHorizontal="true"
+        android:nestedScrollingEnabled="true" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Desserts"
-        android:layout_alignTop="@id/Desserts"
+        android:layout_below="@+id/YourOrder"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="20dp"
@@ -176,3 +119,4 @@
 
 
 </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -32,4 +32,13 @@ class FoodViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    fun getAllFoodsByMealDeal(mealDeal: String): List<FoodEntity>{
+        return foodrepository.getAllFoodsByMealDeal(mealDeal)
+    }
+
+    fun getFoodByName(foodName: String): FoodEntity{
+        return foodrepository.getFoodByName(foodName)
+    }
+
+
 }

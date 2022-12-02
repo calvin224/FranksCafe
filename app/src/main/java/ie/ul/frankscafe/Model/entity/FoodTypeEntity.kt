@@ -1,8 +1,13 @@
 package ie.ul.frankscafe.Model.entity
 
-class FoodTypeEntity(foodType: String, mealDeal: String) {
-    private val foodType: String? = null
-    private val mealDeal: String? = null
+class FoodTypeEntity constructor(foodType: String, mealDeal: String) {
+    private var foodType: String? = null
+    private var mealDeal: String? = null
+
+    init{
+        this.foodType = foodType
+        this.mealDeal = mealDeal
+    }
 
     fun getFoodType(): String?{
         return foodType

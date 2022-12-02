@@ -31,4 +31,18 @@ class PastOrderViewModel(application: Application): AndroidViewModel(application
             return@launch repository.GetOrder(id)
         }
     }
+
+    fun getLastOrderID(): Int{
+        return repository.getLastOrderID()
+    }
+
+
+    fun getAllPastOrders(): ArrayList<PastOrder>{
+        return repository.getAllPastOrders()
+    }
+
+    fun getAllOrdersByCustomerID(customerID: Int): ArrayList<PastOrder>{
+        return repository.getAllOrdersByCustomerID(customerID)
+    }
+
 }

@@ -5,6 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,7 @@ import androidx.fragment.app.FragmentActivity
 import ie.ul.frankscafe.R
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 
-class Account : Fragment(R.layout.account){
+class Account(val application: Application, val mainFragmentManager: MainFragmentManager) : Fragment(R.layout.account){
 
     lateinit var binding: ActivityMainBinding
 
@@ -32,12 +33,7 @@ class Account : Fragment(R.layout.account){
         //val user = CurrentUser.getuser()
 
         regButton.setOnClickListener{
-
-            val fm = (activity as FragmentActivity).supportFragmentManager
-            val fragmentTransaction = fm.beginTransaction()
-            fragmentTransaction.replace(R.id.fragment_container, Fragment(R.layout.pastorders))
-            fragmentTransaction.commit()
-
+            mainFragmentManager.replaceFragment(PastOrders(application, mainFragmentManager))
         }
 
         /*toggle.setOnCheckedChangeListener { _, isChecked ->  //toggles notifications for current user
@@ -52,7 +48,7 @@ class Account : Fragment(R.layout.account){
             (activity as MainActivity).showNotification()
         }*/
 
-        /*@SuppressLint("ServiceCast")
+/*        @SuppressLint("ServiceCast")
         fun showNotification(){
             val channelID = "100"
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

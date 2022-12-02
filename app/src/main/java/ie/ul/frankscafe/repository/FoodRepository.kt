@@ -20,7 +20,7 @@ class FoodRepository(private val foodDao: FoodDao) {
         return foodsArr
     }
 
-    fun generateFoodEntity(foodID: Int, foodName: String, foodType: String, mealDeal: String, foodPrice: Int) {
+    fun generateFoodEntity(foodID: Int, foodName: String, foodType: String, mealDeal: String, foodPrice: Double) {
         val foodTypeEntity: FoodTypeEntity? = FoodFactory().getFoodType(foodType, mealDeal)
         var tempFoodEntity = FoodEntity.Builder()
         tempFoodEntity.setFoodId(foodID)
@@ -32,9 +32,31 @@ class FoodRepository(private val foodDao: FoodDao) {
 
     fun getAll(): MutableList<FoodEntity>{
         for (food in readFromDB()){
-            generateFoodEntity(food[0].toInt(), food[1], food[2], food[3], food[4].toInt())
+            generateFoodEntity(food[0].toInt(), food[1], food[2], food[3], food[4].toDouble())
         }
         return allFoods
+    }
+
+    fun getAllFoodsByMealDeal(mealDeal: String): List<FoodEntity>{
+        var allFoodEntities = allFoods
+        var allFoodNamesPrices: MutableList<FoodEntity> = ArrayList()
+        for (food in allFoodEntities){
+            if (food.getFoodEntityType()?.getMealDeal().equals(mealDeal) ){
+                allFoodNamesPrices.add(food)
+            }
+        }
+        return allFoodNamesPrices
+    }
+
+    fun getFoodByName(foodName: String): FoodEntity{
+        var allFoodEntities = allFoods
+        var foodEntity = FoodEntity()
+        for (food in allFoodEntities){
+            if (food.getFoodName().equals(foodName) ){
+                foodEntity = food
+            }
+        }
+        return foodEntity
     }
 
     suspend fun addFood(food: Food){

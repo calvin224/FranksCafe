@@ -14,7 +14,6 @@ import ie.ul.frankscafe.Services.CurrentUser
 import ie.ul.frankscafe.ViewModel.UserViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 import ie.ul.frankscafe.ViewModel.OrderViewModel
-import ie.ul.frankscafe.ViewModel.UserViewModel
 import kotlinx.android.synthetic.main.register.*
 import kotlinx.android.synthetic.main.signin.*
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +21,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
-class Signin(val application: Application)  : Fragment(R.layout.signin){
+class Signin(val application: Application, val mainFragmentManager: MainFragmentManager) : Fragment(R.layout.signin) {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.signin, container, false)
@@ -32,14 +31,13 @@ class Signin(val application: Application)  : Fragment(R.layout.signin){
 
             if (UserViewModel(application).checkValidUser(loginUsername.text.toString(),loginPassword.text.toString()) == true) {
                 UserViewModel(application).login(loginUsername.text.toString(),application)
+                mainFragmentManager.replaceFragment(Account(application, mainFragmentManager))
                 //println("User Present")
             }
             else if (UserViewModel(application).checkValidUser(loginUsername.text.toString(),loginPassword.text.toString()) == false){
 //                println("User not present")
             }
         }
-
-
         return view
     }
 }

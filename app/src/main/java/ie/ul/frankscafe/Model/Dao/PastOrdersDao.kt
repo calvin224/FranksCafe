@@ -17,4 +17,10 @@ interface PastOrdersDao {
 
     @Query("SELECT * from PastOrders WHERE orderID like :id")
     fun getOrder(id : Int): List<PastOrder>
+
+    @Query("SELECT * FROM PastOrders ORDER BY orderID DESC LIMIT 1")
+    fun getLastOrderID(): Int
+
+    @Query("SELECT * from PastOrders WHERE CustomerID like :customerID")
+    fun getAllOrdersByCustomerID(customerID: Int): List<PastOrder>
 }
