@@ -49,7 +49,12 @@ class UserEntity() {
             userentity.userType = userType
             return userentity
         }
+
+        fun getUserId(): Int? {
+            return userId
+        }
     }
+
 }
 
 
