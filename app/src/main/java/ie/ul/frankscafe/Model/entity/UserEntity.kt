@@ -59,7 +59,6 @@ class UserEntity() {
         fun getUserId(): Int? {
             return userId
         }
-
         fun getUserName(): String{
             return username!!
         }
@@ -76,7 +75,6 @@ class UserEntity() {
         fun getIsSubscribed(): Int{
             return isSubscribed!!
         }
-
     }
 
 }

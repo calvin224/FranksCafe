@@ -104,4 +104,14 @@
         android:minHeight="48dp"
         android:text="Notifications?" />
 
+    <Button
+        android:id="@+id/notificationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="31dp"
+        android:text="Button" />
+
 </RelativeLayout>

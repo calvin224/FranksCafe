@@ -22,6 +22,5 @@ object CurrentUser {
 //    fun clear(){
 ////         user = null!!
 //    }
-
 }
 

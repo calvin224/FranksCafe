@@ -37,7 +37,7 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         return temp
     }
 
-    fun login(username : String,application: Application){
+    fun login(username: String?, application: Application){
         CurrentUser.init(username,application)
     }
 
