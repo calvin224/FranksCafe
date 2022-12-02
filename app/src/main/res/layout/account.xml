@@ -6,57 +6,26 @@
     android:layout_height="match_parent"
     android:background="@color/quaternary">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/pastorders"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@color/secondary"
-        android:text="Past Orders"
-        android:textColor="@color/quinary" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/editprofile"
-        android:layout_width="30dp"
-        android:layout_height="20dp"
-        android:layout_alignTop="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_alignEnd="@id/imageView"
-        android:text="edit"
-        android:layout_marginBottom="20dp"
-        android:background="@color/secondary"
-        android:textSize="10sp"
-        android:textColor="@color/quinary" />
-
-
 
     <TextView
         android:id="@+id/Hitxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-
-        android:layout_marginLeft="50dp"
+        android:layout_toLeftOf="@id/usernametxt"
         android:text="Hi"
+        android:layout_marginRight="20dp"
         android:textColor="@color/secondary"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/nametxt"
+        android:id="@+id/usernametxt"
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_alignLeft="@id/Hitxt"
-        android:layout_marginLeft="50dp"
-        android:hint="%FirstName%"
+        android:hint="%username%"
         android:textColor="@color/secondary"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -65,7 +34,7 @@
         android:id="@+id/exlcmtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/nametxt"
+        android:layout_toEndOf="@id/usernametxt"
         android:layout_marginTop="50dp"
         android:text="!"
         android:layout_marginLeft="20dp"
@@ -73,45 +42,55 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/settingstxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_alignTop="@id/nametxt"
-        android:layout_marginTop="50dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_alignTop="@id/usernametxt"
+        android:layout_marginTop="100dp"
+        android:text="Settings:"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/secondary"
+        android:textSize="25dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/notiswitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/settingstxt"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:text="Notifications:"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/secondary"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/Address"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/pastorders"
+        android:id="@+id/notitypetxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/notiswitch"
         android:layout_marginTop="50dp"
-        android:hint="%AddressLine%"
+        android:text="Notification Type:"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:textColor="@color/secondary"
-        android:textSize="30sp"
+        android:textSize="20dp" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/notispinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/notiswitch"
+        android:layout_alignRight="@id/settingstxt"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:text="Notifications:"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/secondary"
+        android:textSize="20dp"
         android:textStyle="bold" />
-
-    <Switch
-        android:id="@+id/notificationToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="378dp"
-        android:minHeight="48dp"
-        android:text="Notifications?" />
-
-    <Button
-        android:id="@+id/notificationButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="31dp"
-        android:text="Button" />
 
 </RelativeLayout>
