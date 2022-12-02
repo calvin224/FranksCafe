@@ -16,9 +16,18 @@
         android:layout_height="60dp"
         android:id="@+id/orderbtn"
         android:backgroundTint="@color/tertiary"
-        android:layout_toLeftOf="@id/accountbtn"
+        android:layout_toLeftOf="@id/pastorderbtn"
         android:layout_alignParentBottom="true"
         android:text="Order" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/pastorderbtn"
+        android:backgroundTint="@color/tertiary"
+        android:layout_toLeftOf="@id/accountbtn"
+        android:layout_alignParentBottom="true"
+        android:text="Past Orders" />
 
     <Button
         android:layout_width="wrap_content"
@@ -30,5 +39,30 @@
         android:backgroundTint="@color/secondary"
         android:layout_above="@id/orderbtn"
         android:text="Account" />
+
+////////
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/signinbtn"
+        />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/registerbtn"
+        />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/ordersbtn"
+        />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/adminaccountbtn"
+        />
 
 </RelativeLayout>

@@ -14,6 +14,7 @@ import ie.ul.frankscafe.R
 import ie.ul.frankscafe.ViewModel.UserViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 import android.app.NotificationManager
+import ie.ul.frankscafe.Services.CurrentUser
 import ie.ul.frankscafe.repository.NotificationManager as localNotificationManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -30,42 +31,53 @@ open class MainActivity : AppCompatActivity() {
         var fragmentContainer = R.id.fragment_container
         var fragmentManager = MainFragmentManager(supportFragmentManager, fragmentContainer)
         addUser()
+        userTypeCheck(CurrentUser.getuser())
 
-        binding.fragment1btn.setOnClickListener {
+        binding.signinbtn.setOnClickListener {
 
             fragmentManager.replaceFragment(Signin(application, fragmentManager))
             //notifyAllSubscribed()
 
         }
 
-        binding.fragment2btn.setOnClickListener {
+        binding.registerbtn.setOnClickListener {
 
             fragmentManager.replaceFragment(Register(application, fragmentManager))
 
         }
 
-        binding.fragment3btn.setOnClickListener {
+        binding.accountbtn.setOnClickListener {
 
             fragmentManager.replaceFragment(Account(application, fragmentManager))
             addUser2()
 
         }
 
-        binding.fragment4btn.setOnClickListener {
+        binding.orderbtn.setOnClickListener {
 
             fragmentManager.replaceFragment(Ordering(application, fragmentManager))
 
         }
 
-        binding.fragment5btn.setOnClickListener {
+        binding.ordersbtn.setOnClickListener {
 
             fragmentManager.replaceFragment(PastOrders(application, fragmentManager))
 
         }
 
+        binding.pastorderbtn.setOnClickListener {
 
+            fragmentManager.replaceFragment(AdminPastOrders(application, fragmentManager))
 
- }
+        }
+
+        binding.adminaccountbtn.setOnClickListener {
+
+            fragmentManager.replaceFragment(AdminAccount(application, fragmentManager))
+
+        }
+
+    }
 
     private fun notifyAllSubscribed(){
        var user = localNotificationManager(application)
@@ -94,7 +106,7 @@ open class MainActivity : AppCompatActivity() {
              .setContentTitle("Example Title")
 
          if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-             val channel = NotificationChannel(channelID, "Custome Notification", android.app.NotificationManager.IMPORTANCE_DEFAULT)
+             val channel = NotificationChannel(channelID, "Customer Notification", android.app.NotificationManager.IMPORTANCE_DEFAULT)
 
              channel.enableVibration(true)
              notificationManager.createNotificationChannel(channel)
@@ -103,5 +115,22 @@ open class MainActivity : AppCompatActivity() {
          val notification = builder.build()
 
          notificationManager.notify(1000, notification)
+    }
+
+    fun userTypeCheck(user: User) {
+        if(user.usertype == 0){
+            var fragmentContainer = R.id.fragment_container_user
+            var fragmentManager = MainFragmentManager(supportFragmentManager, fragmentContainer)
+            addUser()
+        } else if(user.usertype == 1){
+            var fragmentContainer = R.id.fragment_container_admin
+            var fragmentManager = MainFragmentManager(supportFragmentManager, fragmentContainer)
+            addUser()
+        }
+        else{
+            var fragmentContainer = R.id.fragment_container
+            var fragmentManager = MainFragmentManager(supportFragmentManager, fragmentContainer)
+            addUser()
+        }
     }
 }

@@ -12,66 +12,94 @@
         android:id="@+id/fragment_container"/>
     
     <Button
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/fragment1btn"
+        android:id="@+id/signinbtn"
         android:backgroundTint="@color/black"
+        android:layout_marginBottom="65dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="30dp"
+        android:layout_alignLeft="@id/registerbtn"
         android:text="Sign in" />
 
     <Button
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/fragment2btn"
+        android:id="@+id/registerbtn"
         android:backgroundTint="@color/black"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="500dp"
         android:text="Register" />
 
     <Button
-        android:id="@+id/fragment3btn"
-        android:layout_width="149dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="33dp"
-        android:backgroundTint="@color/black"
-        android:text="Account" />
-
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/orderbtn"
+        />
 
     <Button
-        android:id="@+id/fragment4btn"
-        android:layout_width="149dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="74dp"
-        android:backgroundTint="@color/black"
-        android:text="Ordering" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/pastorderbtn"
+        />
 
     <Button
-        android:id="@+id/fragment5btn"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="-6dp"
-        android:layout_marginBottom="74dp"
-        android:backgroundTint="@color/black"
-        android:text="Past Orders" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/accountbtn"
+      />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"/>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/ordersbtn"
+        />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/adminaccountbtn"
+        />
+
+<!--    <Button-->
+<!--        android:id="@+id/fragment3btn"-->
+<!--        android:layout_width="149dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginBottom="33dp"-->
+<!--        android:backgroundTint="@color/black"-->
+<!--        android:text="Account" />-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/fragment4btn"-->
+<!--        android:layout_width="149dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginBottom="74dp"-->
+<!--        android:backgroundTint="@color/black"-->
+<!--        android:text="Ordering" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/fragment5btn"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="-6dp"-->
+<!--        android:layout_marginBottom="74dp"-->
+<!--        android:backgroundTint="@color/black"-->
+<!--        android:text="Past Orders" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentBottom="true"/>-->
 
 </RelativeLayout>

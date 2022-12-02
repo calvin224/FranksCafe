@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quaternary">
+
+    <TextView
+        android:id="@+id/OrderTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Past Orders"
+        android:textColor="@color/secondary"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/PastOrders"
+        android:layout_width="380dp"
+        android:layout_height="420dp"
+        android:layout_below="@+id/OrderTag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
+
+</RelativeLayout>
