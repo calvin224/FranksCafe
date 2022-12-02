@@ -38,4 +38,4 @@ class Signin(val application: Application)  : Fragment(R.layout.signin){
         }
         return view
     }
-    }
+}
