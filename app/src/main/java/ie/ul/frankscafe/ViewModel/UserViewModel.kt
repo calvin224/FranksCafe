@@ -27,13 +27,18 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    fun checkValidUser(username: String, password: String): Boolean{
+        return repository.checkValidUser(username, password)
+    }
+
+
     fun findbyusername(username: String): User {
         var temp = repository.findbyusername(username)
         return temp
     }
 
-    fun login(user: User, application: Application){
-        CurrentUser.init(user,application)
+    fun login(username : String,application: Application){
+        CurrentUser.init(username,application)
     }
 
     fun register(user: User){

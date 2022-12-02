@@ -2,9 +2,12 @@ package ie.ul.frankscafe.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Switch
 import android.widget.TextView
+import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
 import ie.ul.frankscafe.Model.db_entity.User
+import ie.ul.frankscafe.Model.entity.UserEntity
 import ie.ul.frankscafe.R
 import ie.ul.frankscafe.Services.CurrentOrder
 import ie.ul.frankscafe.ViewModel.FoodViewModel
@@ -46,13 +49,13 @@ open class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.fragment5btn.setOnClickListener {
+        binding.fragment4btn.setOnClickListener {
 
             replaceFragment(Ordering())
 
         }
 
-        binding.fragment6btn.setOnClickListener {
+        binding.fragment5btn.setOnClickListener {
 
             replaceFragment(PastOrders())
 
@@ -84,5 +87,3 @@ open class MainActivity : AppCompatActivity() {
         }
     }
 }
-
-
