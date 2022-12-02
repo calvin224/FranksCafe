@@ -16,14 +16,14 @@ object CurrentUser {
         UserEntity.Builder().setUserType(usertemp.usertype)
         UserEntity.Builder().setUserSubscribedStatus(usertemp.isSubscribed)
         UserEntity.Builder().build()
-        currentUser = User(usertemp.userId, usertemp.username, usertemp.email, usertemp.password, usertemp.usertype, usertemp.isSubscribed)
+        currentUser = User(usertemp.userId, usertemp.username, usertemp.email, usertemp.password, usertemp.usertype, usertemp.isSubscribed, usertemp.userNotificationPreference)
     }
 
     fun getuser(): User {
         return currentUser
     }
     fun clear(){
-        currentUser = User(-1, "", "", "", 0, 0)
+        currentUser = User(-1, "", "", "", 0, 0, 0)
    }
 }
 

@@ -3,6 +3,7 @@ package ie.ul.frankscafe.repository
 import android.app.Application
 import ie.ul.frankscafe.Model.db.AppDatabase
 import ie.ul.frankscafe.Model.db_entity.User
+import ie.ul.frankscafe.Services.NotificationStrategy
 import ie.ul.frankscafe.Services.CalcOrder
 
 class UserRepository(application: Application) {
@@ -33,7 +34,7 @@ class UserRepository(application: Application) {
     fun notifyAllSubscribed(dailyDeal: String){
         var subscribedUsers = getAllSubscribed()
         for (user in subscribedUsers){
-            user.notifyUser(dailyDeal)
+            user.notifyUser(user.userNotificationPreference as Int, dailyDeal, application)
         }
     }
 

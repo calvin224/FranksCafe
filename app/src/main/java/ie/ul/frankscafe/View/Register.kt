@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.R
+import ie.ul.frankscafe.Services.EmailNotification
+import ie.ul.frankscafe.Services.NoPreference
+import ie.ul.frankscafe.Services.PushNotification
 import ie.ul.frankscafe.ViewModel.UserViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.register.*
@@ -20,7 +23,7 @@ import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class Register (val application: Application, val mainFragmentManager: MainFragmentManager) : Fragment(R.layout.register) {
-    val user = User(9914,"calvin2332","123","pass", 1, 1)
+    val user = User(9914,"calvin2332","123","pass", 1, 1, 1)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.register, container, false)
@@ -30,7 +33,7 @@ class Register (val application: Application, val mainFragmentManager: MainFragm
 
         // set on-click listener
         registerButton.setOnClickListener{
-            val user = User(randomUserID, registerUsername.text.toString(), registerEmail.text.toString(), registerPassword.text.toString(), 0, 0)
+            val user = User(randomUserID, registerUsername.text.toString(), registerEmail.text.toString(), registerPassword.text.toString(), 0, 1, 2)
             addUser(user)
             mainFragmentManager.replaceFragment(Signin(application, mainFragmentManager))
         }
