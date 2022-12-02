@@ -19,22 +19,20 @@ class Signin(val application: Application)  : Fragment(R.layout.signin){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.signin, container, false)
         // set on-click listener
-        val regButton = view.findViewById<AppCompatButton>(R.id.regButton)
+        val regButton = view.findViewById<AppCompatButton>(R.id.Login)
         regButton.setOnClickListener{
                 val fm = (activity as FragmentActivity).supportFragmentManager
                 val fragmentTransaction = fm.beginTransaction()
-                fragmentTransaction.replace(R.id.fragment_container, Fragment(R.layout.register))
+                fragmentTransaction.replace(R.id.fragment_container, Fragment(R.layout.signin))
                 fragmentTransaction.commit()
-            val user = User(9922, "calvin2322", "franom22", "123", 1, 1)
+            val user = User(9922, "calvin2322", "franom2", "123", 1, 1)
             login(user)
         }
         return view
     }
 
     fun login(user: User){
-        UserViewModel(application).login(user.username,application)
-        val user2 = User(CurrentUser.user.getUserId(), "calvin2322", "franom22", "123", 1, 1)
-        UserViewModel(application).addUser(user2)
+        UserViewModel(application).login(user,application)
     }
 
 }
