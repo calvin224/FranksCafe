@@ -14,12 +14,12 @@ class CalcOrder() {
         hashMap.put("B", 0)
         hashMap.put("C", 0)
         for (food in CurrentOrder.getOrders()) {
-            when (food.foodType) {
+            when (food.getFoodEntityType()?.getFoodType()) {
                 "A" -> hashMap.put("A", hashMap.getValue("A") + 1)
                 "B" -> hashMap.put("B", hashMap.getValue("B") + 1)
                 "C" -> hashMap.put("C", hashMap.getValue("C") + 1)
             }
-            currCost += food.foodPrice
+            currCost += food.getFoodPrice()!!
         }
         if (hashMap.getValue("A") >= 3) {
             list.add(MealDealA())

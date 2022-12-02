@@ -19,16 +19,20 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
-public class Register (val application: Application) : Fragment(R.layout.register) {
+class Register (val application: Application, val mainFragmentManager: MainFragmentManager) : Fragment(R.layout.register) {
+    val user = User(9914,"calvin2332","123","pass", 1, 1)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.register, container, false)
         val registerButton = view.findViewById<AppCompatButton>(R.id.registerButton)
+        var randomIDGenerator = Random(System.currentTimeMillis())
+        var randomUserID = randomIDGenerator.nextInt(0, 9999999)
 
         // set on-click listener
         registerButton.setOnClickListener{
-            val user = User( Random.nextInt(0, 9999999),registerUsername.text.toString(),registerEmail.text.toString(),registerPassword.text.toString(), 1, 1)
+            val user = User(randomUserID, registerUsername.text.toString(), registerEmail.text.toString(), registerPassword.text.toString(), 0, 0)
             addUser(user)
+            mainFragmentManager.replaceFragment(Signin(application, mainFragmentManager))
         }
         return view
     }

@@ -13,5 +13,6 @@ data class PastOrder(
     @ColumnInfo(name = "PaidAmount") var OrderAmount: Double,
     @ColumnInfo(name = "OrderCost") var OrderCost: Double,
     @ColumnInfo(name = "OrderTime") var OrderTime: String,
+    @ColumnInfo(name = "CustomerID") var CustomerID: Int,
 
 )

@@ -1,8 +1,8 @@
 package ie.ul.frankscafe.Services
 
-import ie.ul.frankscafe.Model.db_entity.Food
+import ie.ul.frankscafe.Model.entity.FoodEntity
 
-class Originator(var state: Food) {
+class Originator(var state: FoodEntity) {
 
     fun createMemento(): Memento {
         return Memento(state)

@@ -2,6 +2,7 @@ package ie.ul.frankscafe.Services
 
 import android.app.Application
 import ie.ul.frankscafe.Model.db_entity.Food
+import ie.ul.frankscafe.Model.entity.FoodEntity
 
 class CompleteState() : State(CurrentOrder) {
 
@@ -9,19 +10,19 @@ class CompleteState() : State(CurrentOrder) {
         return "Order Completed, Action Locked"
     }
 
-    override fun onAdd(food: Food): String? {
+    override fun onAdd(food: FoodEntity): String? {
         return "Order Completed, Action Locked"
     }
 
-    override fun onUndo(foodlist: ArrayList<Food>?): String? {
+    override fun onUndo(foodlist: ArrayList<FoodEntity>?): String? {
         return "Order Completed, Action Locked"
     }
 
-    override fun onRemove(food: Food): String? {
+    override fun onRemove(food: FoodEntity): String? {
         return "Order Completed, Action Locked"
     }
 
-    override fun getOrder(): ArrayList<Food>? {
+    override fun getOrder(): ArrayList<FoodEntity> {
         return currentOrder.getOrders()
     }
     override fun clear(){

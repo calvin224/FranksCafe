@@ -27,49 +27,45 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var fragmentContainer = R.id.fragment_container
+        var fragmentManager = MainFragmentManager(supportFragmentManager, fragmentContainer)
         addUser()
 
         binding.fragment1btn.setOnClickListener {
 
-            replaceFragment(Signin(application))
+            fragmentManager.replaceFragment(Signin(application, fragmentManager))
             //notifyAllSubscribed()
 
         }
 
         binding.fragment2btn.setOnClickListener {
 
-            replaceFragment(Register(application))
+            fragmentManager.replaceFragment(Register(application, fragmentManager))
 
         }
 
         binding.fragment3btn.setOnClickListener {
 
-            replaceFragment(Account())
+            fragmentManager.replaceFragment(Account(application, fragmentManager))
             addUser2()
 
         }
 
         binding.fragment4btn.setOnClickListener {
 
-            replaceFragment(Ordering())
+            fragmentManager.replaceFragment(Ordering(application, fragmentManager))
 
         }
 
         binding.fragment5btn.setOnClickListener {
 
-            replaceFragment(PastOrders())
+            fragmentManager.replaceFragment(PastOrders(application, fragmentManager))
 
         }
 
 
- }
-    private fun replaceFragment(fragment : Fragment){
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        fragmentTransaction.commit()
-    }
+ }
 
     private fun notifyAllSubscribed(){
        var user = localNotificationManager(application)
