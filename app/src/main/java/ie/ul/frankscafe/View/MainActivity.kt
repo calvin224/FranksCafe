@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.R
+import ie.ul.frankscafe.Services.CurrentOrder
 import ie.ul.frankscafe.ViewModel.FoodViewModel
 import ie.ul.frankscafe.ViewModel.UserViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
@@ -15,7 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
@@ -25,43 +26,56 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         addUser()
 
-        binding.fragment1btn.setOnClickListener {
+        //if user == admin
+        binding.signinbtn.setOnClickListener {
 
             replaceFragment(Signin())
             notifyAllSubscribed()
 
         }
 
-        binding.fragment2btn.setOnClickListener {
+        binding.registerbtn.setOnClickListener {
 
-            replaceFragment(Register())
+            replaceFragment(Register(application))
 
         }
 
-        binding.fragment3btn.setOnClickListener {
+        // if user == user
+        binding.accountbtn.setOnClickListener {
 
             replaceFragment(Account())
+            addUser2()
 
         }
 
-        binding.fragment5btn.setOnClickListener {
+        binding.orderingbtn.setOnClickListener {
 
             replaceFragment(Ordering())
 
         }
 
-        binding.fragment6btn.setOnClickListener {
+        binding.pastordersbtn.setOnClickListener {
 
             replaceFragment(PastOrders())
 
         }
+
+
+
  }
     private fun replaceFragment(fragment : Fragment){
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
+
         fragmentTransaction.replace(R.id.fragment_container, fragment)
         fragmentTransaction.commit()
+    }
+
+    private fun userTypeFragment(user : User){
+        when (UserFactory(user).IsAdminFactory(user)){
+            "User" -> layoutInflater =
+        }
     }
 
     private fun notifyAllSubscribed(){
@@ -71,6 +85,12 @@ class MainActivity : AppCompatActivity() {
 
     fun addUser() {
         val user = User(99, "calvin23", "frankscafenotification@gmail.com", "1", 1, 1)
+        GlobalScope.launch(Dispatchers.IO) {
+            UserViewModel(application).addUser(user)
+        }
+    }
+    fun addUser2() {
+        val user = User(992, "calvin232", "franom", "123", 1, 1)
         GlobalScope.launch(Dispatchers.IO) {
             UserViewModel(application).addUser(user)
         }

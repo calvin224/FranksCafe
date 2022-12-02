@@ -5,27 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.MainActivity">
-    
+
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:id="@+id/fragment_container"/>
+        android:layout_height="670dp"
+        android:id="@+id/fragment_container_admin"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/registerbtn"
-        android:backgroundTint="@color/black"
+        android:id="@+id/ordersbtn"
+        android:backgroundTint="@color/tertiary"
+        android:layout_toLeftOf="@id/adminaccountbtn"
         android:layout_alignParentBottom="true"
-        android:text="Register" />
+        android:text="Orders" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:id="@+id/signinbtn"
-        android:backgroundTint="@color/black"
-        android:layout_above="@id/registerbtn"
-        android:text="Sign in" />
-
+        android:layout_marginLeft="0dp"
+        android:id="@+id/adminaccountbtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/secondary"
+        android:layout_above="@id/ordersbtn"
+        android:text="Account" />
 
 </RelativeLayout>

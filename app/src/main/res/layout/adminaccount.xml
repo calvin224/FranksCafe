@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quaternary">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pastorders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/secondary"
+        android:text="Past Orders"
+        android:textColor="@color/quinary" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editprofile"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_alignEnd="@id/imageView"
+        android:text="edit"
+        android:layout_marginBottom="20dp"
+        android:background="@color/secondary"
+        android:textSize="10dp"
+        android:textColor="@color/quinary" />
+
+
+
+    <TextView
+        android:id="@+id/Hitxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+
+        android:layout_marginLeft="50dp"
+        android:text="Hi"
+        android:textColor="@color/secondary"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nametxt"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_alignLeft="@id/Hitxt"
+        android:layout_marginLeft="50dp"
+        android:hint="%FirstName%"
+        android:textColor="@color/secondary"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/exlcmtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/nametxt"
+        android:layout_marginTop="50dp"
+        android:text="!"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/secondary"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/nametxt"
+        android:layout_marginTop="50dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/Address"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/pastorders"
+        android:layout_marginTop="50dp"
+        android:hint="%AddressLine%"
+        android:textColor="@color/secondary"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
