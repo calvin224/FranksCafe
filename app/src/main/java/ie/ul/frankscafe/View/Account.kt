@@ -44,9 +44,9 @@ class Account(val application: Application, val mainFragmentManager: MainFragmen
             }
         }*/
 
-        notificationButton.setOnClickListener {
+        /*notificationButton.setOnClickListener {
             (activity as MainActivity).showNotification()
-        }
+        }*/
 
 /*        @SuppressLint("ServiceCast")
         fun showNotification(){
