@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "533ca7261d19edc9c1cb00f068103045",
+    "identityHash": "ea2ae555bd5072d3868a4af56a6abb3a",
     "entities": [
       {
         "tableName": "Users",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER PRIMARY KEY AUTOINCREMENT, `username` TEXT, `email` TEXT, `password` TEXT, `userType` INTEGER, `isSubscribed` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER PRIMARY KEY AUTOINCREMENT, `username` TEXT, `email` TEXT, `password` TEXT, `userType` INTEGER, `isSubscribed` INTEGER, `userNotificationPreference` INTEGER)",
         "fields": [
           {
             "fieldPath": "userId",
@@ -41,6 +41,12 @@
           {
             "fieldPath": "isSubscribed",
             "columnName": "isSubscribed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userNotificationPreference",
+            "columnName": "userNotificationPreference",
             "affinity": "INTEGER",
             "notNull": false
           }
@@ -158,7 +164,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '533ca7261d19edc9c1cb00f068103045')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ea2ae555bd5072d3868a4af56a6abb3a')"
     ]
   }
 }

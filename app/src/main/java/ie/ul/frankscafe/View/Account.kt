@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import ie.ul.frankscafe.R
+import ie.ul.frankscafe.Services.CurrentUser
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 
 class Account(val application: Application, val mainFragmentManager: MainFragmentManager) : Fragment(R.layout.account){
@@ -36,13 +37,13 @@ class Account(val application: Application, val mainFragmentManager: MainFragmen
             mainFragmentManager.replaceFragment(PastOrders(application, mainFragmentManager))
         }
 
-        /*toggle.setOnCheckedChangeListener { _, isChecked ->  //toggles notifications for current user
+        toggle.setOnCheckedChangeListener { _, isChecked ->  //toggles notifications for current user
             if (isChecked) {
-                user.setUserSubscribedStatus(1)
+                CurrentUser.getuser().isSubscribed = 1
             } else {
-                user.setUserSubscribedStatus(0)
+                CurrentUser.getuser().isSubscribed = 0
             }
-        }*/
+        }
 
         /*notificationButton.setOnClickListener {
             (activity as MainActivity).showNotification()

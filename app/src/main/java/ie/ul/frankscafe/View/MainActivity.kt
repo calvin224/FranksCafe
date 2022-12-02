@@ -8,9 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import android.provider.ContactsContract.CommonDataKinds.Email
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import ie.ul.frankscafe.Model.db_entity.User
 import ie.ul.frankscafe.R
+import ie.ul.frankscafe.Services.CurrentOrder
+import ie.ul.frankscafe.Services.EmailNotification
+import ie.ul.frankscafe.ViewModel.FoodViewModel
 import ie.ul.frankscafe.ViewModel.UserViewModel
 import ie.ul.frankscafe.databinding.ActivityMainBinding
 import android.app.NotificationManager
@@ -29,12 +34,11 @@ open class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         var fragmentContainer = R.id.fragment_container
         var fragmentManager = MainFragmentManager(supportFragmentManager, fragmentContainer)
-        addUser()
+
 
         binding.fragment1btn.setOnClickListener {
 
             fragmentManager.replaceFragment(Signin(application, fragmentManager))
-            //notifyAllSubscribed()
 
         }
 
@@ -47,7 +51,6 @@ open class MainActivity : AppCompatActivity() {
         binding.fragment3btn.setOnClickListener {
 
             fragmentManager.replaceFragment(Account(application, fragmentManager))
-            addUser2()
 
         }
 
@@ -60,27 +63,14 @@ open class MainActivity : AppCompatActivity() {
         binding.fragment5btn.setOnClickListener {
 
             fragmentManager.replaceFragment(PastOrders(application, fragmentManager))
+            notifyAllSubscribed()
 
         }
-
-
-
  }
 
     private fun notifyAllSubscribed(){
        var user = localNotificationManager(application)
-        user.updateDeal("Test")
-    }
-
-    fun addUser() {
-        GlobalScope.launch(Dispatchers.IO) {
-        }
-    }
-    fun addUser2() {
-        val user = User(992, "calvin232", "franom", "123", 1, 1)
-        GlobalScope.launch(Dispatchers.IO) {
-            UserViewModel(application).addUser(user)
-        }
+        user.updateDeal("Mexican")
     }
 
      @SuppressLint("ServiceCast")
@@ -94,7 +84,7 @@ open class MainActivity : AppCompatActivity() {
              .setContentTitle("Example Title")
 
          if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-             val channel = NotificationChannel(channelID, "Custome Notification", android.app.NotificationManager.IMPORTANCE_DEFAULT)
+             val channel = NotificationChannel(channelID, "Custom Notification", android.app.NotificationManager.IMPORTANCE_DEFAULT)
 
              channel.enableVibration(true)
              notificationManager.createNotificationChannel(channel)
